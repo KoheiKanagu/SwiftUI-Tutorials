@@ -79,7 +79,9 @@ struct LandmarkList: View {
         } detail: {
             Text("Select a Landmark")
         }
+#if !os(visionOS)
         .focusedValue(\.selectedLandmark, $modelData.landmarks[index ?? 0])
+#endif
     }
 }
 
